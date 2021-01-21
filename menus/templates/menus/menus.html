@@ -14,7 +14,12 @@
 </head>
 
 <body>
-    {% draw_menu 'main_menu' %}
+    <div class='d-flex flex-column'>
+        {% for menu in menus %}
+            <h1>{{menu.name}}</h1>
+            {% draw_menu menu.name %}
+        {% endfor %}
+    </div>
     <script>
         $.fn.extend({
             treed: function (o) {
